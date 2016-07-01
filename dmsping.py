@@ -18,7 +18,7 @@ def read_config():
 
 def get_conf_file():
   parser = optparse.OptionParser()
-  parser.add_option('-i', action="store", help="Where are your input files located?", dest="conf_file", default="./config.json")
+  parser.add_option('-i', action="store", help="Where is your config file. Example: /etc/dms/config.json", dest="conf_file", default="./config.json")
   (options, args) = parser.parse_args()
   return options.conf_file
 
