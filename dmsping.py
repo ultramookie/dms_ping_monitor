@@ -6,7 +6,8 @@ import optparse
 import sys
 import requests
 
-def read_config(conf_file):
+def read_config():
+  conf_file = get_conf_file() 
   if os.path.isfile(conf_file):
     with open(conf_file) as config_file:    
       config = json.load(config_file)
@@ -27,8 +28,7 @@ def check_host(host,url):
     res = requests.get(url)  
   
 def run():
-  conf_file = get_conf_file() 
-  config = read_config(conf_file)
+  config = read_config()
   url = config['url']
   host = config['host']
   check_host(host,url)
